@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 const API_BASE = "http://localhost:5000/api/auth";
 
@@ -62,68 +63,77 @@ export default function App() {
   }
 
   return (
-    <main style={{ maxWidth: 640, margin: "2rem auto", fontFamily: "Arial, sans-serif" }}>
+    <main className="app">
       <h1>測試網站0506</h1>
-      <p>{message}</p>
+      <p className="message">{message}</p>
 
-      <section>
+      <section className="card register-card">
+        <div className="sparkles" aria-hidden="true">
+          <span className="heart heart-1">❤</span>
+          <span className="heart heart-2">❤</span>
+          <span className="heart heart-3">❤</span>
+        </div>
         <h2>Register</h2>
         <form onSubmit={register}>
           <input
+            className="input"
             placeholder="Name"
             value={registerForm.name}
             onChange={(e) => setRegisterForm({ ...registerForm, name: e.target.value })}
           />
-          <br />
           <input
+            className="input"
             placeholder="Email"
             type="email"
             value={registerForm.email}
             onChange={(e) => setRegisterForm({ ...registerForm, email: e.target.value })}
           />
-          <br />
           <input
+            className="input"
             placeholder="Password"
             type="password"
             value={registerForm.password}
             onChange={(e) => setRegisterForm({ ...registerForm, password: e.target.value })}
           />
-          <br />
-          <button type="submit">Register</button>
+          <button className="btn" type="submit">
+            Register
+          </button>
         </form>
       </section>
 
-      <section>
+      <section className="card">
         <h2>Login</h2>
         <form onSubmit={login}>
           <input
+            className="input"
             placeholder="Email"
             type="email"
             value={loginForm.email}
             onChange={(e) => setLoginForm({ ...loginForm, email: e.target.value })}
           />
-          <br />
           <input
+            className="input"
             placeholder="Password"
             type="password"
             value={loginForm.password}
             onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
           />
-          <br />
-          <button type="submit">Login</button>
+          <button className="btn" type="submit">
+            Login
+          </button>
         </form>
       </section>
 
-      <section>
+      <section className="card">
         <h2>Protected API</h2>
-        <button onClick={getMe} disabled={!token}>
+        <button className="btn" onClick={getMe} disabled={!token}>
           Get My Profile
         </button>
-        <button onClick={logout} disabled={!token} style={{ marginLeft: "0.5rem" }}>
+        <button className="btn secondary" onClick={logout} disabled={!token}>
           Logout
         </button>
         {me && (
-          <pre style={{ background: "#f5f5f5", padding: "0.75rem", marginTop: "1rem" }}>
+          <pre className="profile-box">
             {JSON.stringify(me, null, 2)}
           </pre>
         )}
