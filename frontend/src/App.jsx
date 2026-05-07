@@ -89,7 +89,7 @@ export default function App() {
 
   function profileUrl(profile) {
     if (!profile) return "/";
-    return `/user/${profile.handle || profile.creator_id}`;
+    return `/BookA/${profile.handle || profile.creator_id}`;
   }
 
   if (loading) return <main className="app"><div className="page">{bootMessage}</div></main>;
@@ -101,7 +101,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home user={user} />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/user/:creatorIdOrHandle" element={<UserProfilePage user={user} />} />
+        <Route path="/BookA/:creatorIdOrHandle" element={<UserProfilePage user={user} />} />
         <Route path="/read/:postId" element={<ReadPost user={user} />} />
         <Route path="/book/:bookId" element={<BookDetail user={user} />} />
         <Route path="/write" element={<ProtectedRoute user={user}><Write user={user} /></ProtectedRoute>} />
