@@ -2,8 +2,8 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [react()],
+  // ... 其他原本的設定
   server: {
-    port: 5173,
-  },
-});
+    allowedHosts: ['booka-link.onrender.com']
+  }
+})
