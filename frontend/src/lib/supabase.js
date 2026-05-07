@@ -17,5 +17,20 @@ const fallbackAnonKey =
 
 export const supabase = createClient(
   hasSupabaseEnv ? supabaseUrl : fallbackUrl,
-  hasSupabaseEnv ? supabaseAnonKey : fallbackAnonKey
+  hasSupabaseEnv ? supabaseAnonKey : fallbackAnonKey,
+  {
+    auth: {
+      persistSession: true,
+      detectSessionInUrl: true,
+    },
+  }
 );
+
+export function signInWithProvider(provider) {
+  return supabase.auth.signInWithOAuth({
+    provider,
+    options: {
+      scopes: "openid email profile",
+    },
+  });
+}
