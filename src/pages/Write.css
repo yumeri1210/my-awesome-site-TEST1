@@ -1,0 +1,248 @@
+.write-container {
+  padding: 2rem;
+  background: #fbf6ec;
+  min-height: 100vh;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn {
+  border: 1px solid #d5cab1;
+  background: #fff8e1;
+  color: #7d5a27;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.hierarchy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.level {
+  background-color: #f5f2e7;
+  padding: 1rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.level h2 {
+  margin: 0;
+  color: #6b4b28;
+}
+
+.badge {
+  background: #e8dcbd;
+  color: #6b4b28;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 0.85rem;
+  margin-bottom: 0.75rem;
+  background-color: #fff;
+  border-radius: 14px;
+  border: 1px solid #efe7d7;
+}
+
+.item.active {
+  border-color: #d6b77a;
+  box-shadow: inset 0 0 0 1px rgba(194, 150, 80, 0.15);
+}
+
+.item-label {
+  flex: 1;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.item-label strong {
+  display: block;
+  font-size: 1rem;
+  color: #45331c;
+}
+
+.item-label small {
+  display: block;
+  margin-top: 0.35rem;
+  color: #7a6240;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.menu-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: #6b4b28;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.item-menu {
+  position: absolute;
+  top: 110%;
+  right: 0.5rem;
+  width: 160px;
+  background: #fff;
+  border: 1px solid #e4dcc6;
+  border-radius: 16px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  display: grid;
+}
+
+.item-menu button {
+  border: none;
+  background: transparent;
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  color: #5a4327;
+}
+
+.item-menu button:hover {
+  background: #f7efe0;
+}
+
+.editor-panel {
+  background: #fff8e6;
+  padding: 1.5rem;
+  border-radius: 24px;
+  border: 1px solid #e8ddc6;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.editor-actions button {
+  border: none;
+  background: #f5e3be;
+  color: #6b4b28;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.publish-btn {
+  background: #8b4513;
+  color: #fff;
+}
+
+.editor-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 320px;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid #e4dcc6;
+  resize: vertical;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fffdf5;
+}
+
+.preview {
+  min-height: 320px;
+  padding: 1rem;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #e4dcc6;
+  overflow: auto;
+}
+
+.preview h1,
+.preview h2,
+.preview h3 {
+  margin: 0 0 0.75rem;
+}
+
+.preview p,
+.preview strong,
+.preview em,
+.preview br {
+  color: #4a3d2a;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.empty-state h1 {
+  color: #6b4b28;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #7a6240;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.empty-state button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 1080px) {
+  .hierarchy-grid,
+  .editor-body {
+    grid-template-columns: 1fr;
+  }
+}
